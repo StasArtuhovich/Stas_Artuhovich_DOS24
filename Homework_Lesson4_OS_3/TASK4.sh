@@ -13,7 +13,6 @@ start_index=$2
 end_index=$3
 action=$4
 
-# Преобразуем индексы в формат, понятный bash (нумерация с нуля)
 let start_index=start_index-1
 let length=end_index-start_index
 
