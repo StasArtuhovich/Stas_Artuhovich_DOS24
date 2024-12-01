@@ -9,3 +9,25 @@ https://console.cloud.google.com/storage/browser/tms_123121419djscj_test
 ___
 
 # Выполнение 
+
+### Установка google cloud sdk
+```
+sudo apt update
+sudo apt install google-cloud-sdk
+```
+
+### Использование gsutil rsync
+
+ 1.Создание папки в бакете 
+ ``` 
+ gsutil cp -n /dev/null/ gs://tms_123121419djscj_test/Stas_Artuhovich
+ ```
+ 2. Копирование в бакет
+```
+gsutil rsync -r /mnt/d/vsc/Stas_Artuhovich gs://tms_123121419djscj_test/Stas_Artuhovich/
+```
+3. Создал в папке Stas_Artuhovich файл test.txt и закинул его на cloud
+
+![alt text](<Screenshot 2024-12-01 041659.png>)
+![alt text](image-1.png)
+
