@@ -11,7 +11,7 @@ ___
 # Выполнение 
 
 ### Установка google cloud sdk
-```
+```bash
 sudo apt update
 sudo apt install google-cloud-sdk
 ```
@@ -19,11 +19,11 @@ sudo apt install google-cloud-sdk
 ### Использование gsutil rsync
 
  1.Создание папки в бакете 
- ``` 
+ ``` bash
  gsutil cp -n /dev/null/ gs://tms_123121419djscj_test/Stas_Artuhovich
  ```
  2. Копирование в бакет
-```
+```bash
 gsutil rsync -r /mnt/d/vsc/Stas_Artuhovich gs://tms_123121419djscj_test/Stas_Artuhovich/
 ```
 3. Создал в папке Stas_Artuhovich файл test.txt и закинул его на cloud
