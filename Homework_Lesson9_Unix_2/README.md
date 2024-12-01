@@ -141,5 +141,70 @@ sudo tail -f /var/log/nginx/error.log
 
 ### 4.2. 
 
+4.2.1. Установка apache2
+```
+sudo apt update
+sudo apt install apache2 -y
+```
+```
+sudo systemctl start apache2
+sudo systemctl enable apache2
+sudo systemctl status apache2
+```
+4.2.2. На основной системе win11 зашёл в браузер и ввел =>
+```
+http://localhost
+```
+![alt text](image-2.png)
+
+### 4.3
+
+4.3.1. Установка logrotate
+```
+sudo apt install -y logrotate
+```
+```
+sudo mkdir -p /mnt/d/vsc/logs.apache2
+sudo chown www-data:www-data /mnt/d/vsc/logs_apache2
+```
+4.3.2. Настройка Apache2 для записи логов в новый каталог.
+```
+sudo nano /etc/apache2/sites-available/000-default.conf
+```
+4.3.3. Изменение строк
+```
+ErrorLog /mnt/d/vsc/logs_apache2/error.log
+CustomLog /mnt/d/vsc_logs_apache2/access.log combined
+```
+4.3.4. Перезапуск apache2
+```
+sudo systemctl restart apache2
+```
+4.3.5. Настройка logrotate для новых логов.
+```
+sudo nano /etc/logrotate.d/apache-app
+```
+```
+/mnt/d/vsc/logs_apache2/*.log {
+    daily
+    missingok
+    rotate 14
+    compress
+    delaycompress
+    notifempty
+    create 640 www-data www-data
+    sharedscripts
+    postrotate
+        systemctl reload apache2 > /dev/null 2>/dev/null || true
+    endscript
+}
+```
+4.3.6. Тест logrotate
+```
+sudo logrotate -d /etc/logrotate.d/apache-app
+```
+![](image-3.png)
+
+
 
 
