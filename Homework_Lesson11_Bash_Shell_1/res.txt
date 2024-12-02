@@ -1,0 +1,8 @@
+/c/Users/user/docs/16-Bit_Language_Tools_Libraries_Manual.pdf
+/c/Users/user/docs/Installing_And_Licensing_MPLAB_XC_C_Compilers.pdf
+/c/Users/user/docs/Microchip-Unified-Standard-C-Library-Ref.pdf
+/c/Users/user/docs/MPLAB_XC16_Asm_Link_Users_Guide.pdf
+/c/Users/user/docs/MPLAB_XC16_C_Compiler_Users_Guide.pdf
+/c/Users/user/docs/ResourceGraphs.pdf
+/c/Users/user/docs/xclm/doc/Installing_And_Licensing_MPLAB_XC_C_Compilers.pdf
+/c/Users/user/docs/xclm/doc/XC_License_Server_Manual_50002334C.pdf
