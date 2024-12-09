@@ -1,0 +1,8 @@
+
+API_KEY f850511001e33686456c750bc00e75f8
+
+API_OP="np"
+
+City="Minsk"
+
+

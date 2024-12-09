@@ -18,15 +18,15 @@
 ## Задание 1.
 
 Переход в нужную директорию
-```
+```bash
 cd /d/DOS24/Stas_Artuhovich_DOS24/Homework_Lesson11_Bash_Shell_1
 ```
 Создание файла ***file_find_1.sh***
-```
+```bash
 touch file_find_1_sh.
 ```
 Закидываем скрипт в него и запускаем:
-```
+```bash
 ./file_find_1.sh res.txt ~/docs/ pdf
 ```
 ![alt text](image.png)
@@ -41,12 +41,12 @@ touch file_find_1_sh.
 ## Задание 2.
 
 Создание файла со скриптом
-```
+```bash
 touch file_find_2.sh
 ```
 Закидываем скрипт и запускаем
-```
-./file_find_2.sh "# Выполнение# /d/DOS24/Stas_Artuhovich_DOS24/
+```bash
+./file_find_2.sh "# Выполнение" /d/DOS24/Stas_Artuhovich_DOS24/
 ```
 ![alt text](image-1.png)
 
