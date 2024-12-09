@@ -8,11 +8,23 @@ if [[ ! -f "$LOGFILE" ]]; then
   exit 1
 fi
 
-# Извлечение успешных логинов (IP адреса со статусом 200)
-echo "Successful logins (IP addresses):"
-grep "status=200" "$LOGFILE" | awk -F 'ip=' '{print $2}' | awk '{print $1}' | sort | uniq
-echo ""
+statuses=(200 403)
 
-# Извлечение уникальных пользователей со статусом 403
-echo "Users with failed logins:"
-grep "status=403" "$LOGFILE" | awk -F 'user=' '{print $2}' | awk '{print $1}' | sort | uniq
+# Цикл по каждому статусу
+for status in "${statuses[@]}"; do
+  case "$status" in
+    200)
+      echo "IP addresses with status=200:"
+      grep "status=200" "$LOGFILE" | awk -F 'ip=' '{print $2}' | awk '{print $1}' | sort | uniq
+      echo ""
+      ;;
+    403)
+      echo "Usernames with status=403:"
+      grep "status=403" "$LOGFILE" | awk -F 'user=' '{print $2}' | awk '{print $1}' | sort | uniq
+      echo ""
+      ;;
+    *)
+      echo "Unknown status: $status"
+      ;;
+  esac
+done
